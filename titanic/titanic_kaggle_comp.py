@@ -24,3 +24,17 @@ for i in range(0, 2):
                 'AgeFill'] = median_ages[i,j]
 
 df['AgeIsNull'] = pd.isnull(df.Age).astype(int)
+
+
+# Feature Engineering
+df['FamilySize'] = df['SibSp'] + df['Parch']
+df['age_class_mult'] = df.AgeFill * df.Pclass
+
+df.FamilySize.hist()
+plb.show()
+
+df.age_class_mult.hist()
+plb.show()
+
+df.AgeFill.hist()
+plb.show()
