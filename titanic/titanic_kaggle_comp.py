@@ -38,3 +38,8 @@ plb.show()
 
 df.AgeFill.hist()
 plb.show()
+
+# Prepare data fro machine learning, no 'object' types
+df.drop(['Name', 'Age', 'Sex', 'Ticket', 'Cabin', 'Embarked'], axis=1)
+
+train_data = df.values
